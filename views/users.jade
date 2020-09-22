@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= text
+    p hello from #{text}
+    div.center
+        - for(var i=1;i<=50;i++){
+        div.ceva 
+            p.in-box #{i}
+        - }
+    

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div.center
+    - for(var i=1;i<=50;i++){
+    div.card
+    - }
+  a.page2(href="http://localhost:3000/u") PAGE 2
