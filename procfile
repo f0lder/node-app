@@ -1,1 +1,1 @@
-Worder: npm start
+Worder: node ./bin/www
