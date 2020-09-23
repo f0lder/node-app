@@ -1,0 +1,64 @@
+doctype html
+head
+  title TEMPLATE
+  link(href='https://fonts.googleapis.com/css2?family=Alata&family=Roboto+Mono&display=swap' rel='stylesheet')
+  link(rel='stylesheet' ,href='/stylesheets/style_test.css', type='text/css')
+#javaS
+  form#Form(action='')
+    label(for='') Select a predefined color scheme:
+    select#mySelect(onclick='selectPreset()')
+      option(value='1') Black
+      option(value='2') White
+      option(value='3') Yellow
+      option(value='4') Blue
+      option(value='5') Pink
+      option(value='6') Green
+  label#labelText(for='')
+    | Set a custom background color: 
+    input#myText(type='text')
+    |                 Set cutom border color:
+    input#bgSet(type='text')
+    |             Set custom text color:
+    input#textSet(type='text')
+    |             Set custom Divs background color:
+    input#divBack(type='text')
+    |             (Note: press Enter after typing to aply 
+    br
+    |             You can add hex codes but dont forget the &apos;#&apos;)
+  button#hide.btn(onclick='animFunc()') Hide Menu
+  p#test(style='color: white;')
+  p#bgText(style='color: white;')
+  p#textShow(style='color: white;')
+  p#divShow(style='color: white;')
+#content
+  #play
+    p#lets LET&apos;S PLAY
+  #make
+    h1#header
+      | MAKE AN 
+      br
+      |  ASSUMPTION 
+      br
+      | ABOUT ME
+    #checkId.check1
+      p#tick  &check;
+    #checkId2.check1(style='border-bottom: none;')
+      p#ics &#x2715;
+  #empty
+  #tab1
+    p#half(style='margin-block-start: 0%; padding-top: 2em; word-spacing: 2.5em;')  TRUE HALF-TRUE FALSE
+    .parent
+      #first
+      #inner1
+      #inner2
+      #inner3
+      #last
+  #empty1
+    #notes1.notes
+      p#notesP NOTES
+  #play1(style='height: 5em;border-top: none;')
+    p#createdBy.bottom1(style='margin-block-start: 0%;padding-top: 1em; line-height: 1.5em;')
+      | TEMPLATE BY @CREATEDBYJZ 
+      br
+      u Reworked by @bgd_u
+script(src='/javascripts/script_test.js')

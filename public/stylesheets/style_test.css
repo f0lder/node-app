@@ -1,0 +1,198 @@
+body {
+    background-color: #1e1e1e;
+    font-family: 'Roboto Mono', monospace;
+    display: inline;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#play {
+    border: 2px white solid;
+    height: 3em;
+    width: 25em;
+}
+
+#play1 {
+    border: 2px white solid;
+    height: 3em;
+    width: 25em;
+}
+
+#make {
+    border: 2px white solid;
+    height: auto;
+    width: 25em;
+    border-top: none;
+}
+
+.check1 {
+    border: 2px white solid;
+    width: 6em;
+    height: 6em;
+    border-top: none;
+    border-right: none;
+    margin-left: auto;
+}
+
+#empty {
+    border: 2px white solid;
+    height: 12em;
+    width: 25em;
+    border-top: none;
+    position: relative;
+}
+
+#empty1 {
+    border: 2px white solid;
+    height: 12em;
+    width: 25em;
+    border-top: none;
+    position: relative;
+}
+
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    position: absolute;
+    margin-left: 1em;
+}
+
+#tab1 {
+    border: 2px white solid;
+    height: 10em;
+    width: 25em;
+    border-top: none;
+}
+
+#first,
+#last,
+#inner1,
+#inner2,
+#inner3 {
+    background-color: white;
+    height: 3.5em;
+    width: 3.5em;
+    float: left;
+    margin: .1em;
+}
+
+#first {
+    border-radius: 1em;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+#last {
+    border-radius: 1em;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+
+.parent {
+    width: auto;
+    height: 5em;
+    margin: auto;
+    float: left;
+    margin-left: 3.5em;
+}
+
+.notes {
+    width: 5em;
+    height: 1em;
+}
+
+.notes p {
+    border: 2px solid white;
+    padding: .5em;
+    background-color: black;
+    margin-block-start: 0%;
+    border-top: 0em;
+    border-left: 0em;
+}
+
+form {
+    top: 0;
+    left: 0;
+}
+
+select {
+    font-size: 1em;
+}
+
+#javaS {
+    height: auto;
+    width: auto;
+    background-color: black;
+    border: 1px white solid;
+    padding: 1em;
+    z-index: 10;
+    width: auto;
+    margin-bottom: 2em;
+    resize: vertical;
+    overflow: auto;
+}
+
+#content {
+    margin-left: 2em;
+    width: auto;
+}
+
+#javaS,
+#content {
+    float: left;
+}
+
+label {
+    color: white;
+}
+
+#Form {
+    padding: .5em;
+}
+
+#tick,
+#ics {
+    margin-block-start: 0em;
+    font-size: 4em;
+}
+
+.btn:focus,
+.btn:active,
+.btn.focus {
+    text-decoration: none;
+}
+
+input {
+    padding: 6px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    display: block;
+    margin: 1em;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 1em;
+}
+
+#myTest {
+    display: none;
+}
+
+label {
+    color: white;
+}
