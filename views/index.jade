@@ -1,10 +1,49 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div.center
-    - for(var i=1;i<=50;i++){
-    div.card
-    - }
-  a.page2(href="/u") PAGE 2
+  section.insert
+    h3 Insert Data
+    form(action='/insert' method='post')
+      .input
+        label(for='name') Name
+        input#title(type='text' name='name')
+      .input
+        label(for='price') Price
+        input#content(type='number' name='price')
+      .input
+        label(for='desc') Desc
+        input#author(type='text' name='desc')
+      button(type='submit') INSERT
+  section.get
+    h3 Get Data
+    a(href='/get-data') LOAD DATA
+    div 
+    if res
+        each val in res
+          article.item
+            div Name: #{val.name}
+            div Price: #{val.price} lei
+            div Desc: #{val.desc}
+  section.update
+    h3 Update Data
+    form(action='/update' method='post')
+      .input
+        label(for='id') ID
+        input#id(type='text' name='id')
+      .input
+        label(for='title') Title
+        input#title(type='text' name='title')
+      .input
+        label(for='content') Content
+        input#content(type='text' name='content')
+      .input
+        label(for='author') Author
+        input#author(type='text' name='author')
+      button(type='submit') UPDATE
+  section.delete
+    h3 Delete Data
+    form(action='/delete' method='post')
+      .input
+        label(for='id') ID
+        input#id(type='text' name='id')
+      button(type='submit') DELETE

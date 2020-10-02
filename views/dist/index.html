@@ -5,59 +5,63 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    <h1></h1>
-    <p>Welcome to </p>
-    <div class="center">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div><a href="/u" class="page2">PAGE 2</a>
+    <h1>MONGODB - EXERCISE
+      <section class="insert">
+        <h3>Insert Data</h3>
+        <form action="/insert" method="post">
+          <div class="input">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title">
+          </div>
+          <div class="input">
+            <label for="content">Content</label>
+            <input id="content" type="text" name="content">
+          </div>
+          <div class="input">
+            <label for="author">Author</label>
+            <input id="author" type="text" name="author">
+          </div>
+          <button type="submit">INSERT</button>
+        </form>
+      </section>
+      <section class="get">
+        <h3>Get Data</h3><a href="/get-data">LOAD DATA</a>
+        <div> 
+          <p></p>
+        </div>
+      </section>
+      <section class="update">
+        <h3>Update Data</h3>
+        <form action="/update" method="post">
+          <div class="input">
+            <label for="id">ID</label>
+            <input id="id" type="text" name="id">
+          </div>
+          <div class="input">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title">
+          </div>
+          <div class="input">
+            <label for="content">Content</label>
+            <input id="content" type="text" name="content">
+          </div>
+          <div class="input">
+            <label for="author">Author</label>
+            <input id="author" type="text" name="author">
+          </div>
+          <button type="submit">UPDATE</button>
+        </form>
+      </section>
+      <section class="delete">
+        <h3>Delete Data</h3>
+        <form action="/delete" method="post">
+          <div class="input">
+            <label for="id">ID</label>
+            <input id="id" type="text" name="id">
+          </div>
+          <button type="submit">DELETE</button>
+        </form>
+      </section>
+    </h1>
   </body>
 </html>

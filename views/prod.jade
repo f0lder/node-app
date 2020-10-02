@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .ceva
+    each val in res
+      .items
+        .atr
+          hr
+          p #{val.name}
+          hr
+          p #{val.price} lei
+          hr
+          p #{val.desc}
+          hr
+          a(href='/id=#{val._id}') VIEW PRODUCT
