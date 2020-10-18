@@ -3,19 +3,19 @@ var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require("assert");
 const { type } = require('os');
+const { ObjectId } = require('mongodb');
 var url = "mongodb://localhost:27017/maindb";
 /* GET home page. */
 
 function generatePages(dbname, colname) {
     mongo.connect(url, function(err, db) {
-
         var dbo = db.db(dbname);
         dbo.collection(colname).find({}).toArray(function(err, result) {
             if (err) throw err;
             //  console.log(result);
             result.forEach(element => {
                 router.get("/id=" + element._id, function(req, res, next) {
-                    res.render("prodid", { "name": element.name, "price": element.price });
+                    res.render("prodid", { "name": element.name, "price": element.price, "title": "ITEM", "desc": element.desc });
                 });
             });
 
@@ -72,9 +72,41 @@ router.post('/insert', function(req, res, next) {
 });
 
 router.post("/update", function(req, res, next) {
+    mongo.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("maindb");
 
+        var ID = req.body.id;
+
+
+        var item = {
+            name: req.body.name,
+            price: req.body.price,
+            desc: req.body.desc,
+        }
+        var query = { "_id": ObjectId(ID) };
+        var newvalues = { $set: item };
+        dbo.collection("products").updateOne(query, newvalues, function(err, res) {
+            if (err) throw err;
+            console.log("1 document updated");
+            db.close();
+        });
+    });
+    res.redirect("/");
 });
 router.post("/delete", function(req, res, next) {
+    mongo.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("maindb");
 
+        var ID = req.body.id;
+        var query = { "_id": ObjectId(ID) };
+        dbo.collection("products").deleteOne(query, function(err, res) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            db.close();
+        });
+    });
+    res.redirect("/");
 });
 module.exports = router;
