@@ -3,16 +3,16 @@ extends layout
 block content
   section.insert
     h3 Insert Data
-    form(action='/insert' method='post')
+    form(action='/insert', method='post')
       .input
         label(for='name') Name
-        input#title(type='text' name='name')
+        input#title(type='text',name='name')
       .input
         label(for='price') Price
-        input#content(type='number' name='price')
+        input#content(type='number',name='price')
       .input
         label(for='desc') Desc
-        input#author(type='text' name='desc')
+        input#author(type='text',name='desc')
       button(type='submit') INSERT
   section.get
     h3 Get Data
@@ -27,24 +27,24 @@ block content
             div Desc: #{val.desc}
   section.update
     h3 Update Data
-    form(action='/update' method='post')
+    form(action='/update',method='post')
       .input
         label(for='id') ID
-        input#id(type='text' name='id')
+        input#id(type='text', name='id')
       .input
         label(for='name') Name
-        input#title(type='text' name='name')
+        input#title(type='text', name='name')
       .input
         label(for='price') Price
-        input#content(type='number' name='price')
+        input#content(type='number', name='price')
       .input
         label(for='desc') Description
-        input#author(type='text' name='desc')
+        input#author(type='text', name='desc')
       button(type='submit') UPDATE
   section.delete
     h3 Delete Data
-    form(action='/delete' method='post')
+    form(action='/delete', method='post')
       .input
         label(for='id') ID
-        input#id(type='text' name='id')
+        input#id(type='text', name='id')
       button(type='submit') DELETE
