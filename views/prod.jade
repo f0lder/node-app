@@ -3,13 +3,5 @@ extends layout
 block content
   .ceva
     each val in res
-      .items
-        .atr
-          hr
-          p #{val.name}
-          hr
-          p #{val.price} lei
-          hr
-          p #{val.desc}
-          hr
-          a(href='/name=#{val.name}') VIEW PRODUCT
+      .items(onclick="location.href=/id=#{val._id}")
+        a(href='/id=#{val._id}') #{val.text} by #{val.author}

@@ -4,7 +4,8 @@ var mongo = require('mongodb').MongoClient;
 var assert = require("assert");
 const { type } = require('os');
 const { ObjectId } = require('mongodb');
-var url = "mongodb://localhost:27017/maindb";
+var url =
+  "mongodb+srv://admin:admin@cluster0.rtuxu.mongodb.net?retryWrites=true&w=majority";
 /* GET home page. */
 
 function generatePages(dbname, colname) {
@@ -15,7 +16,7 @@ function generatePages(dbname, colname) {
             //  console.log(result);
             result.forEach(element => {
                 router.get("/id=" + element._id, function(req, res, next) {
-                    res.render("prodid", { "name": element.name, "price": element.price, "title": "ITEM", "desc": element.desc });
+                    res.render("prodid", { "text": element.text, "author": element.author, "date": element.date, "guild": element.guild,"channel":element.channel });
                 });
             });
 
@@ -23,7 +24,7 @@ function generatePages(dbname, colname) {
         });
     });
 }
-generatePages("maindb", "products");
+generatePages("discord", "logs");
 
 
 router.get('/', function(req, res, next) {
@@ -32,8 +33,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/p', function(req, res, next) {
     mongo.connect(url, function(err, db) {
-        var dbo = db.db("maindb");
-        dbo.collection("products").find({}).toArray(function(err, result) {
+        var dbo = db.db("discord");
+        dbo.collection("logs").find({}).toArray(function(err, result) {
             if (err) throw err;
             res.render("prod", { "res": result });
             db.close();
@@ -43,8 +44,8 @@ router.get('/p', function(req, res, next) {
 
 router.get('/get-data', function(req, res, next) {
     mongo.connect(url, function(err, db) {
-        var dbo = db.db("maindb");
-        dbo.collection("products").find({}).toArray(function(err, result) {
+        var dbo = db.db("discord");
+        dbo.collection("logs").find({}).toArray(function(err, result) {
             if (err) throw err;
             res.render("index", { "res": result });
             db.close();
@@ -60,8 +61,8 @@ router.post('/insert', function(req, res, next) {
     };
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("maindb");
-        dbo.collection("products").insertOne(item, function(err, res) {
+        var dbo = db.db("discord");
+        dbo.collection("logs").insertOne(item, function(err, res) {
             if (err) throw err;
             console.log("inserted!");
             db.close();
@@ -73,19 +74,21 @@ router.post('/insert', function(req, res, next) {
 router.post("/update", function(req, res, next) {
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("maindb");
+        var dbo = db.db("discord");
 
         var ID = req.body.id;
 
 
         var item = {
-            name: req.body.name,
-            price: req.body.price,
-            desc: req.body.desc,
+            text: req.body.text,
+            author: req.body.author,
+            channel: req.body.channel,
+            guild: req.body.guild,
+            date: req.body.date
         }
         var query = { "_id": ObjectId(ID) };
         var newvalues = { $set: item };
-        dbo.collection("products").updateOne(query, newvalues, function(err, res) {
+        dbo.collection("logs").updateOne(query, newvalues, function(err, res) {
             if (err) throw err;
             console.log("1 document updated");
             db.close();
@@ -96,11 +99,11 @@ router.post("/update", function(req, res, next) {
 router.post("/delete", function(req, res, next) {
     mongo.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("maindb");
+        var dbo = db.db("discord");
 
         var ID = req.body.id;
         var query = { "_id": ObjectId(ID) };
-        dbo.collection("products").deleteOne(query, function(err, res) {
+        dbo.collection("logs").deleteOne(query, function(err, res) {
             if (err) throw err;
             console.log("1 document deleted");
             db.close();
