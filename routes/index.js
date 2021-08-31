@@ -43,7 +43,6 @@ router.get('/p', function(req, res, next) {
 
 router.get('/get-data', function(req, res, next) {
     mongo.connect(url, function(err, db) {
-
         var dbo = db.db("maindb");
         dbo.collection("products").find({}).toArray(function(err, result) {
             if (err) throw err;
