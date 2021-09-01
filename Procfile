@@ -1,0 +1,1 @@
+Worker: node -r dotenv/config your_script.js
