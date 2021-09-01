@@ -4,8 +4,7 @@ var mongo = require('mongodb').MongoClient;
 var assert = require("assert");
 const { type } = require('os');
 const { ObjectId } = require('mongodb');
-var url =
-  "mongodb+srv://admin:admin@cluster0.rtuxu.mongodb.net?retryWrites=true&w=majority";
+var url = require('./getURL.js');
 /* GET home page. */
 
 function generatePages(dbname, colname) {
