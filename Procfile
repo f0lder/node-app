@@ -1,1 +1,1 @@
-Worker: node -r dotenv/config your_script.js
+Worker: node -r dotenv/config app.js
